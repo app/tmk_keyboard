@@ -131,7 +131,7 @@ static const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
     TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,         P7,  P8,  P9,  PMNS,
     LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,     FN15,    P4,  P5,  P6,  PPLS,
     LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,          UP,      P1,  P2,  P3,  PENT,
-    LCTL,LGUI,               FN16,               LALT,FN31,LEFT,RGHT,DOWN,    P0,       PDOT
+    LGUI,LALT,               FN16,               RALT,FN31,LEFT,RGHT,DOWN,    P0,       PDOT
     ),
     /* Cursor Layer(WASD, IJKL)
      * ,---------------------------------------------------------. ,---------------.
@@ -149,16 +149,16 @@ static const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
     [3] = KEYMAP(
     ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL,     NLCK,EQL, PSLS,PAST,
     CAPS,HOME,UP,  PGUP,NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS,UP,  INS,          P7,  P8,  P9,  PMNS,
-    LCAP,LEFT,DOWN,RGHT,NO,  NO,  NO,  NO,  HOME,PGUP,LEFT,RGHT,     FN15,    P4,  P5,  P6,  PPLS,
+    LCTL,LEFT,DOWN,RGHT,NO,  NO,  NO,  NO,  HOME,PGUP,LEFT,RGHT,     FN15,    P4,  P5,  P6,  PPLS,
     LSFT,END, NO,  PGDN,NO,  NO,  NO,  NO,  END, PGDN,DOWN,          PGUP,    P1,  P2,  P3,  PENT,
     LCTL,LGUI,               FN16,               LALT,FN31,HOME,END, PGDN,    P0,       PDOT
     ),
     [4] = KEYMAP(
     ESC, F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL,     NLCK,EQL, PSLS,PAST,
-    CAPS,HOME,UP,  PGUP,NO,  NO,  NO,  NO,  PSCR,SLCK,PAUS,UP,  INS,          P7,  P8,  P9,  PMNS,
-    LCAP,LEFT,DOWN,RGHT,NO,  NO,  NO,  NO,  HOME,PGUP,LEFT,RGHT,     FN15,    P4,  P5,  P6,  PPLS,
-    LSFT,END, NO,  PGDN,NO,  NO,  NO,  NO,  END, PGDN,DOWN,          PGUP,    P1,  P2,  P3,  PENT,
-    LCTL,LGUI,               FN16,               LALT,FN31,HOME,END, PGDN,    P0,       PDOT
+    CAPS,NO,  NO,  UP,  PGUP,PGUP,NO,  PGUP,UP,  INS, BSPC,NO,  NO,           P7,  P8,  P9,  PMNS,
+    LCTL,HOME,LEFT,DOWN,RGHT,END, HOME,LEFT,DOWN,RGHT,END, NO,       FN15,    P4,  P5,  P6,  PPLS,
+    LSFT,NO,  NO,  PGDN,PGDN,NO,  DEL, PGDN,NO,  NO,  NO,            PGUP,    P1,  P2,  P3,  PENT,
+    LGUI,LALT,               FN16,               RALT,FN31,HOME,END, PGDN,    P0,       PDOT
     ),
     [7] = {},
 };
@@ -203,7 +203,7 @@ static const uint16_t fn_actions[] PROGMEM = {
     [28] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_BSPACE),
     [29] = ACTION_MODS_ONESHOT(MOD_LSFT),
     [30] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_GRAVE),
-    [31] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_BSLASH),
+    [31] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_BSLASH),
 };
 
 
