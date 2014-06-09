@@ -24,12 +24,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define PRODUCT_ID      0x6060
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    geekhack
-#define PRODUCT         GH60
-#define DESCRIPTION     t.m.k. keyboard firmware for GH60
+#define PRODUCT         HHKB Lite 2
+#define DESCRIPTION     t.m.k. keyboard firmware for HHKB Lite 2
 
 /* key matrix size */
-#define MATRIX_ROWS 5
-#define MATRIX_COLS 14
+#define MATRIX_ROWS 8
+#define MATRIX_COLS 12
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
