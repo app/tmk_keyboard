@@ -199,7 +199,7 @@ static void select_row(uint8_t row)
             DDRF  |= (1<<0);
             PORTF &= ~(1<<0);
             break;
-        case 4
+	case 4:
             DDRF  |= (1<<1);
             PORTF &= ~(1<<1);
             break;
