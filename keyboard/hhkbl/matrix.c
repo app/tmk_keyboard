@@ -179,33 +179,49 @@ static matrix_row_t read_cols(void)
 static void unselect_rows(void)
 {
     // Hi-Z(DDR:0, PORT:0) to unselect
-    DDRD  &= ~0b00101111;
-    PORTD &= ~0b00101111;
+    DDRC  &= ~0b10000000;
+    PORTC &= ~0b10000000;
+    DDRD  &= ~0b01000000;
+    PORTD &= ~0b01000000;
+    DDRF  &= ~0b11110011;
+    PORTF &= ~0b11110011;
 }
 
 static void select_row(uint8_t row)
 {
     // Output low(DDR:1, PORT:0) to select
     switch (row) {
-        case 0:
-            DDRD  |= (1<<0);
-            PORTD &= ~(1<<0);
+        case 7:
+            DDRD  |= (1<<6);
+            PORTD &= ~(1<<6);
             break;
-        case 1:
-            DDRD  |= (1<<1);
-            PORTD &= ~(1<<1);
+        case 6:
+            DDRC  |= (1<<7);
+            PORTC &= ~(1<<7);
             break;
-        case 2:
-            DDRD  |= (1<<2);
-            PORTD &= ~(1<<2);
+        case 5:
+            DDRF  |= (1<<0);
+            PORTF &= ~(1<<0);
+            break;
+        case 4
+            DDRF  |= (1<<1);
+            PORTF &= ~(1<<1);
             break;
         case 3:
-            DDRD  |= (1<<3);
-            PORTD &= ~(1<<3);
+            DDRF  |= (1<<4);
+            PORTF &= ~(1<<4);
             break;
-        case 4:
-            DDRD  |= (1<<5);
-            PORTD &= ~(1<<5);
+        case 2:
+            DDRF  |= (1<<5);
+            PORTF &= ~(1<<5);
+            break;
+        case 1:
+            DDRF  |= (1<<6);
+            PORTF &= ~(1<<6);
+            break;
+        case 0:
+            DDRF  |= (1<<7);
+            PORTF &= ~(1<<7);
             break;
     }
 }
