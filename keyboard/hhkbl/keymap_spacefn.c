@@ -20,14 +20,14 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
 
     KEYMAP(
-             LCTL, FN0,GRV,             5,   6, EQL,     MINS,   UP, 
-	                 1,   2,   3,   4,   7,   8,   9,   0, DOWN,
-		         Q,   W,   E,   R,   U,   I,   O,   P, RGHT,
-        BSPC,     LSFT,TAB,             T,   Y,RBRC,LEFT,LBRC, RALT,
-        BSLS,            A,   S,   D,   F,   J,   K,   L,SCLN, LALT,
-             LGUI,     ESC,             G,   H,          QUOT,
-	ENT,      RSFT,  Z,   X,   C,   V,   M,      DOT,      COMM,
-        SPC, RGUI,                      B,   N,          SLSH
+             LCTL, FN0, GRV,            5,   6, EQL,     MINS,    UP,
+	                  1,  2,   3,   4,   7,   8,   9,   0,  DOWN,
+		          Q,  W,   E,   R,   U,   I,   O,   P,  RGHT,
+        BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  RALT,
+        BSLS,             A,  S,   D,   F,   J,   K,   L,SCLN,  LALT,
+             LGUI,      ESC,            G,   H,          QUOT,       
+	ENT,      RSFT,   Z,  X,   C,   V,   M,      DOT,       COMM,
+        SPC, RGUI,                      B,   N,           SLSH           
 	),
 
 	
