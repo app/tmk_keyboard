@@ -19,13 +19,16 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * `-----------------------------------------------------------'
      */
 
-    KEYMAP_ANSI(
-	/* LCTL, FN0, UP 5 6 */            5,LCTL, FN0,  UP,   9,   Q,      5, 6, \
-        /* EQL MINS GRV W E R T DOWN 2 */EQL,   5,  MINS,   GRV,   4,   W,   E,   R,   T,   DOWN,    2, \
-	/*7 8 9 0 1 */ 3, 4,   7,   8,   9,   0,   1,   U,   I,   O,   P,   LBRC, \
-        /*RGHT W E R BSPC LSFT*/RGHT,W,   E,   R,   U,   I,   O,   P,   Q,   L,   BSPC,LSFT, \
-        /*LALT RBRC,   LEFT,   LBRC,   TAB BSLS */LALT,Z,   0,   T,   Y,   RBRC,   LEFT,   LBRC,   TAB,DOT, BSLS, \
-        K,R,D, SCLN, A,V,F),
+    KEYMAP(
+             LCTL, FN0,GRV,             5,   6, EQL,     MINS,   UP, 
+	                 1,   2,   3,   4,   7,   8,   9,   0, DOWN,
+		         Q,   W,   E,   R,   U,   I,   O,   P, RGHT,
+        BSPC,     LSFT,TAB,             T,   Y,RBRC,LEFT,LBRC, RALT,
+        BSLS,            A,   S,   D,   F,   J,   K,   L,SCLN, LALT,
+             LGUI,     ESC,             G,   H,          QUOT,
+	ENT,      RSFT,  Z,   X,   C,   V,   M,      DOT,      COMM,
+        SPC, RGUI,                      B,   N,          SLSH
+	),
 
 	
     /*KEYMAP_ANSI(*/
@@ -48,12 +51,12 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |    |    |    |                        |    |    |    |    |
      * `-----------------------------------------------------------'
      */
-    KEYMAP_ANSI(
-        GRV, F5,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL,  \
-        TRNS,TRNS,TRNS,ESC, TRNS,TRNS,TRNS,HOME,UP,  END, PSCR,SLCK,PAUS,INS,  \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,LEFT,DOWN,RGHT,TRNS,TRNS,     TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,SPC, PGDN,GRV, FN1, TRNS,TRNS,          TRNS, \
-        TRNS,TRNS,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),
+    /*KEYMAP_ANSI(*/
+        /*GRV, F5,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL,  \*/
+        /*TRNS,TRNS,TRNS,ESC, TRNS,TRNS,TRNS,HOME,UP,  END, PSCR,SLCK,PAUS,INS,  \*/
+        /*TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,LEFT,DOWN,RGHT,TRNS,TRNS,     TRNS, \*/
+        /*TRNS,TRNS,TRNS,TRNS,TRNS,SPC, PGDN,GRV, FN1, TRNS,TRNS,          TRNS, \*/
+        /*TRNS,TRNS,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),*/
 };
 
 /*
