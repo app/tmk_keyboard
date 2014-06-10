@@ -51,6 +51,20 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |    |    |    |                        |    |    |    |    |
      * `-----------------------------------------------------------'
      */
+
+    KEYMAP(
+             LCTL, FN0, GRV,           F5,  F6, F12,      F11,    UP,
+	                  F1, F2, F3,  F4,  F7,  F8,  F9, F10,  DOWN,
+		          Q,  W,   E,   R,PGUP,  UP,   O,   P,  RGHT,
+        BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  RALT,
+        BSLS,             A,  S,   D,   F,LEFT,DOWN,RGHT, END,  LALT,
+             LGUI,      ESC,            G,HOME,          QUOT,       
+	ENT,      RSFT,   Z,  X,   C,   V,PGDN,      DOT,       COMM,
+        SPC, RGUI,                      B, DEL,           SLSH           
+	
+	),
+
+    
     /*KEYMAP_ANSI(*/
         /*GRV, F5,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL,  \*/
         /*TRNS,TRNS,TRNS,ESC, TRNS,TRNS,TRNS,HOME,UP,  END, PSCR,SLCK,PAUS,INS,  \*/
@@ -63,6 +77,6 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * Fn action definition
  */
 const uint16_t PROGMEM fn_actions[] = {
-    /*[0] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),*/
+    [0] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),
     [1] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),    // tilde
 };
