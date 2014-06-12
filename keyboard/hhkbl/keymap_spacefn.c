@@ -19,14 +19,14 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
 
     KEYMAP(
-             LCTL, FN0, GRV,            5,   6, EQL,     MINS,    UP,
+             LCTL,LGUI, GRV,            5,   6, EQL,     MINS,    UP,
 	                  1,  2,   3,   4,   7,   8,   9,   0,  DOWN,
 		          Q,  W,   E,   R,   U,   I,   O,   P,  RGHT,
         BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  RALT,
         BSLS,             A,  S,   D,   F,   J,   K,   L,SCLN,  LALT,
-             LGUI,      ESC,            G,   H,          QUOT,       
+              FN0,      ESC,            G,   H,          QUOT,
 	ENT,      RSFT,   Z,  X,   C,   V,   M,      DOT,       COMM,
-        SPC, RGUI,                      B,   N,           SLSH           
+        SPC,  FN0,                      B,   N,           SLSH
 	),
 
 
@@ -46,14 +46,14 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
 
     KEYMAP(
-             LCTL, FN0, DEL,           F5,  F6, F12,      F11,  PGUP,
+             LCTL,LGUI, DEL,           F5,  F6, F12,      F11,  PGUP,
 	                  F1, F2, F3,  F4,  F7,  F8,  F9, F10,  PGDN,
 		          Q,  W,   E,   R,PGUP,  UP,   O,   P,   END,
          DEL,     LSFT, TAB,            T,PSCR,RBRC,HOME,LBRC,  RALT,
          INS,             A,  S,   D,   F,LEFT,DOWN,RGHT, END,  LALT,
-             LGUI,      ESC,            G,HOME,          QUOT,       
-	ENT,      RSFT,   Z,  X,   C,   V,PGDN,      FN1,       COMM,
-        SPC, RGUI,                      B, DEL,           SLSH           
+             TRNS,      ESC,            G,HOME,          QUOT,
+	ENT,      RSFT,   Z,  X,   C,   V,PGDN,      FN1,       PGUP,
+        SPC, TRNS,                      B, DEL,           SLSH
 	
 	),
 
