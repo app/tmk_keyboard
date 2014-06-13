@@ -1,0 +1,13 @@
+HHKB Lite 2 Keyswitch matrix (8x14)
+----------------
+Two Fn keys wired on the same ROW/COL and can't be distinguished.
+
+      COL 0     1       2       3       4       5       6       7       8       9       10      11       12       13
+    ROW ---------------------------------------------------------------------------------------------------------------
+      1|  _NO_  _NO_    _NO_    _NO_    1       2       3       4       7       8       9       0        _NO_     Down
+      2|  _NO   _NO_    _NO_    _NO_    q       w       e       r       u       i       o       p        _NO_     Right
+      3|  Del   _NO_    LShift  _NO_    Tab     _NO_    _NO_    t       y       ]       Left    [        _NO_     RAlt
+      4|  \     _NO_    _NO_    _NO_    a       s       d       f       j       k       l       ;        _NO_     LAlt
+      5|  _NO_  LGUI    _NO_    _NO_    Esc     _NO_    _NO_    g       h       _NO_    _NO_    '        _NO_     _NO_
+      6|  Enter _NO_    RShift  _NO_    z       x       c       v       m       _NO_    .       _NO_     _NO_     ,
+      7|  Space RGUI    _NO_    _NO_    _NO_    _NO_    _NO_    b       n       _NO_    _NO_    /        _NO_     _NO_
