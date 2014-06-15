@@ -30,15 +30,15 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 
 
-    /* Overlay 1: HHKB mode (HHKB Fn)
+    /* Overlay 1: LFn layer 
      * ,-----------------------------------------------------------.
      * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
-     * |Tab  |  Q|  W|  E|  R|  T|Psc|Pgu| Up|  O|  P|  [|  ]| Del |
+     * |Tab  |  Q| P1| P2| P3|Nlk|Psc|Pgu| Up|  O|  P|  [|  ]| Del |
      * |-----------------------------------------------------------|
-     * |Contro|  A|  S|  D|  F|  G|Hom|Lef|Dow|Rig|End|  '|Enter   |
+     * |Contro| P0| P4| P5| P6|  G|Hom|Lef|Dow|Rig|End|  '|Enter   |
      * |-----------------------------------------------------------|
-     * |Shift   |  Z|  X|  C|  V|  B|Del|Pgd|  ,|Fn1|  /|Shift |Fn0|
+     * |Shift   |  Z| P7| P8| P9|  B|Del|Pgd|  ,|Fn1|  /|Shift |Fn0|
      * `-----------------------------------------------------------'-.
      *     |Fn0|Gui|Alt|         Space         |Alt  |Gui|      |PgUp|
      *     `---------------------------------------------' |Home|PgDn| End |
@@ -47,23 +47,16 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(
              LCTL,LGUI, DEL,           F5,  F6, F12,      F11,  PGUP,
-	                  F1, F2, F3,  F4,  F7,  F8,  F9, F10,  PGDN,
-		          Q,  W,   E,   R,PGUP,  UP,   O,   P,   END,
-         DEL,     LSFT, TAB,            T,PSCR,RBRC,HOME,LBRC,  RALT,
-         INS,             A,  S,   D,   F,LEFT,DOWN,RGHT, END,  LALT,
+	                 F1, F2,  F3,  F4,  F7,  F8,  F9, F10,  PGDN,
+		          Q, P1,  P2,  P3,PGUP,  UP,   O,   P,   END,
+         DEL,     LSFT, TAB,         NLCK,PSCR,RBRC,HOME,LBRC,  RALT,
+         INS,            P0, P4,  P5,  P6,LEFT,DOWN,RGHT, END,  LALT,
              TRNS,      ESC,            G,HOME,          QUOT,
-	ENT,      RSFT,   Z,  X,   C,   V,PGDN,      FN1,       PGUP,
+	ENT,      RSFT,   Z, P7,  P8,  P9,PGDN,      FN1,       PGUP,
         SPC, TRNS,                      B, DEL,           SLSH
 	
 	),
 
-    
-    /*KEYMAP_ANSI(*/
-        /*GRV, F5,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, DEL,  \*/
-        /*TRNS,TRNS,TRNS,ESC, TRNS,TRNS,TRNS,HOME,UP,  END, PSCR,SLCK,PAUS,INS,  \*/
-        /*TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,PGUP,LEFT,DOWN,RGHT,TRNS,TRNS,     TRNS, \*/
-        /*TRNS,TRNS,TRNS,TRNS,TRNS,SPC, PGDN,GRV, FN1, TRNS,TRNS,          TRNS, \*/
-        /*TRNS,TRNS,TRNS,          TRNS,                    TRNS,TRNS,TRNS,TRNS),*/
 };
 
 /*
@@ -72,6 +65,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM fn_actions[] = {
     [0] = ACTION_LAYER_MOMENTARY(1),
     [1] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),    // tilde
+    /*[2] = ACTION_LAYER_TAP_KEY(2, KC_ESC),*/
     /*[0] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),*/
     /*[1] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),    // tilde*/
 };
