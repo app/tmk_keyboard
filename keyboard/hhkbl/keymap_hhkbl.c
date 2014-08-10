@@ -46,14 +46,29 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
 
     KEYMAP(
-             LCTL,LGUI, DEL,           F5,  F6, F12,      F11,  PGUP,
-	                 F1, F2,  F3,  F4,  F7,  F8,  F9, F10,  PGDN,
-		          Q, P1,  P2,  P3,PGUP,  UP,   O,   P,   END,
-         DEL,     LSFT, TAB,         NLCK,PSCR,RBRC,HOME,LBRC,  RALT,
-         INS,            P0, P4,  P5,  P6,LEFT,DOWN,RGHT, END,  LALT,
-             TRNS,      ESC,            G,HOME,          QUOT,
-	ENT,      RSFT,   Z, P7,  P8,  P9,PGDN,      FN1,       PGUP,
-        SPC, TRNS,                      B, DEL,           SLSH
+/*LCTL,LGUI, GRV,            5,   6, EQL,     MINS,    UP,*/
+  LCTL,LGUI, DEL,           F5,  F6, F12,      F11,  PGUP,
+
+/*1,  2,   3,   4,   7,   8,   9,   0,  DOWN,*/
+ F1, F2,  F3,  F4,  F7,  F8,  F9, F10,  PGDN,
+
+/*Q,  W,   E,   R,   U,   I,   O,   P,  RGHT,*/
+  Q, P1,  P2,  P3,PGUP,  UP,   O,   P,   END,
+
+/*BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  RALT,*/
+   DEL,     LSFT, TAB,         NLCK,PSCR,RBRC,HOME,LBRC,  RALT,
+
+/*BSLS,             A,  S,   D,   F,   J,   K,   L,SCLN,  LALT,*/
+   INS,            P0, P4,  P5,  P6,LEFT,DOWN,RGHT, END,  LALT,
+
+/*FN0,      ESC,            G,   H,          QUOT,*/
+ TRNS,      ESC,            G,HOME,          QUOT,
+
+/*ENT,      RSFT,   Z,  X,   C,   V,   M,      DOT,       COMM,*/
+  ENT,      RSFT,   Z, P7,  P8,  P9,PGDN,      NUHS,       PGUP,
+
+/*SPC,  FN0,                      B,   N,           SLSH*/
+  SPC, TRNS,                      B, DEL,           FN1
 	
 	),
 
