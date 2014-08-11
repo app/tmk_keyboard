@@ -56,7 +56,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   Q, P1,  P2,  P3,PGUP,  UP,   O,   P,   END,
 
 /*BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  RALT,*/
-   DEL,     LSFT, TAB,         NLCK,PSCR,RBRC,HOME,LBRC,  RALT,
+   DEL,     LSFT, TAB,         NLCK,PSCR, GRV,HOME, FN1,  RALT,
 
 /*BSLS,             A,  S,   D,   F,   J,   K,   L,SCLN,  LALT,*/
    INS,            P0, P4,  P5,  P6,LEFT,DOWN,RGHT, END,  LALT,
@@ -65,7 +65,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  TRNS,      ESC,            G,HOME,          QUOT,
 
 /*ENT,      RSFT,   Z,  X,   C,   V,   M,      DOT,       COMM,*/
-  ENT,      RSFT,   Z, P7,  P8,  P9,PGDN,      NUHS,       PGUP,
+  ENT,      RSFT,   Z, P7,  P8,  P9,PGDN,     NUBS,        FN2,
 
 /*SPC,  FN0,                      B,   N,           SLSH*/
   SPC, TRNS,                      B, DEL,           FN1
@@ -80,6 +80,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM fn_actions[] = {
     [0] = ACTION_LAYER_MOMENTARY(1),
     [1] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),    // tilde
+    [2] = ACTION_MODS_KEY(MOD_LSFT, KC_NUBS),    // >
     /*[2] = ACTION_LAYER_TAP_KEY(2, KC_ESC),*/
     /*[0] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),*/
     /*[1] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),    // tilde*/
