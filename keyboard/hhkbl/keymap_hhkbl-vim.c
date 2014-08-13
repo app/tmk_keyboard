@@ -30,7 +30,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 
 
-    /* Overlay 1: LFn layer 
+    /* Overlay 1: Fn layer 
      * ,-----------------------------------------------------------.
      * |Esc| F1| F2| F3| F4| F5| F6| F7| F8| F9|F10|F11|F12|Ins|Del|
      * |-----------------------------------------------------------|
@@ -53,13 +53,13 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  F1, F2,  F3,  F4,  F7,  F8,  F9, F10,  PGDN,
 
 /*Q,  W,   E,   R,   U,   I,   O,   P,  RGHT,*/
-  Q, P1,  P2,  P3,PGDN,PGUP,   O,HOME,   END,
+  Q, P1,  P2,  P3,PGUP,   I,   O,PSCR,   END,
 
 /*BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  RALT,*/
-   DEL,     LSFT, TAB,         NLCK,PSCR, GRV,HOME, FN1,  RALT,
+   DEL,     LSFT, TAB,         NLCK,HOME, GRV,HOME, FN1,  RALT,
 
 /*BSLS,             A,  S,   D,   F,   J,   K,   L,SCLN,  LALT,*/
-   INS,            P0, P4,  P5,  P6,DOWN,  UP,RGHT, END,  LALT,
+   INS,            P0, P4,  P5,  P6,DOWN,  UP,RGHT,BSPC,  LALT,
 
 /*FN0,      ESC,            G,   H,          QUOT,*/
  TRNS,      ESC,            G,LEFT,          QUOT,
@@ -68,7 +68,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ENT,      RSFT,   Z, P7,  P8,  P9,PGDN,     NUBS,        FN2,
 
 /*SPC,  FN0,                      B,   N,           SLSH*/
-  SPC, TRNS,                      B,HOME,           FN1
+  SPC, TRNS,                      B, END,           FN1
 	
 	),
 
