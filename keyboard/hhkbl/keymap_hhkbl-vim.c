@@ -22,11 +22,11 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              LCTL,LGUI, GRV,            5,   6, EQL,     MINS,    UP,
 	                  1,  2,   3,   4,   7,   8,   9,   0,  DOWN,
 		          Q,  W,   E,   R,   U,   I,   O,   P,  RGHT,
-        BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  RALT,
-        BSLS,             A,  S,   D,   F,   J,   K,   L,SCLN,  LALT,
-              FN0,      ESC,            G,   H,          QUOT,
+        BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  FN0,
+        BSLS,             A,  S,   D,   F,   J,   K,   L,SCLN,  FN0,
+              LALT,     ESC,            G,   H,          QUOT,
 	FN3,      RSFT,   Z,  X,   C,   V,   M,      DOT,       COMM,
-        SPC,  FN0,                      B,   N,           SLSH
+        SPC,  RALT,                     B,   N,           SLSH
 	),
 
 
@@ -55,20 +55,20 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*Q,  W,   E,   R,   U,   I,   O,   P,  RGHT,*/
   Q, P1,  P2,  P3,PGUP,   I,   O,PSCR,   END,
 
-/*BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  RALT,*/
-   DEL,     LSFT,CAPS,         NLCK,HOME, GRV,HOME, FN1,  RALT,
+/*BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  FN0,*/
+   DEL,     LSFT,CAPS,         NLCK,HOME, GRV,HOME, FN1,  TRNS,
 
-/*BSLS,             A,  S,   D,   F,   J,   K,   L,SCLN,  LALT,*/
-   INS,            P0, P4,  P5,  P6,DOWN,  UP,RGHT,BSPC,  LALT,
+/*BSLS,             A,  S,   D,   F,   J,   K,   L,SCLN,  FN0,*/
+   INS,            P0, P4,  P5,  P6,DOWN,  UP,RGHT,BSPC,  TRNS,
 
-/*FN0,      ESC,            G,   H,          QUOT,*/
- TRNS,      ESC,            G,LEFT,          QUOT,
+/*LALT,      ESC,            G,   H,          QUOT,*/
+  LALT,      ESC,            G,LEFT,          QUOT,
 
 /*FN3,      RSFT,   Z,  X,   C,   V,   M,      DOT,       COMM,*/
   ENT,      RSFT,   Z, P7,  P8,  P9,PGDN,     NUBS,        FN2,
 
-/*SPC,  FN0,                      B,   N,           SLSH*/
-  SPC, TRNS,                      B, END,           FN1
+/*SPC, RALT,                      B,   N,           SLSH*/
+  SPC, RALT,                      B, END,           FN1
 	
 	),
 
