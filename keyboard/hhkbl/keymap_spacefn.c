@@ -1,4 +1,5 @@
 #include "keymap_common.h"
+#include "action_util.h"
 
 /*HHKB Lite 2 keyboard*/
 
@@ -19,7 +20,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
 
     KEYMAP(
-             LCTL,LGUI, GRV,            5,   6, EQL,     MINS,    UP,
+             FN5,LGUI, GRV,            5,   6, EQL,     MINS,    UP,
 	                  1,  2,   3,   4,   7,   8,   9,   0,  DOWN,
 		          Q,  W,   E,   R,   U,   I,   O,   P,  RGHT,
         BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  RALT,
@@ -47,7 +48,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(
 /*LCTL,LGUI, GRV,            5,   6, EQL,     MINS,    UP,*/
-  LCTL,LGUI, DEL,           F5,  F6, F12,      F11,  PGUP,
+  TRNS,LGUI, DEL,           F5,  F6, F12,      F11,  PGUP,
 
 /*1,  2,   3,   4,   7,   8,   9,   0,  DOWN,*/
  F1, F2,  F3,  F4,  F7,  F8,  F9, F10,  PGDN,
@@ -74,6 +75,12 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
+
+/* id for user defined functions */
+enum function_id {
+    RUSLAT,
+};
+
 /*
  * Fn action definition
  */
@@ -83,6 +90,38 @@ const uint16_t PROGMEM fn_actions[] = {
     [2] = ACTION_MODS_KEY(MOD_LSFT, KC_NUBS),    // >
     [3] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENTER),
     [4] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),
+    // [5] = ACTION_FUNCTION(RUSLAT),
+    [5] = ACTION_FUNCTION_TAP(RUSLAT),
     /*[2] = ACTION_LAYER_TAP_KEY(2, KC_ESC),*/
     /*[1] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),    // tilde*/
 };
+
+//Left Control key Tap (down+up) works as LShift+LGUI 
+//I use LShift+LGUI for RUS/ENG keyboard layout switching
+void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
+{
+    keyevent_t event = record->event;
+    switch (id) {
+        case RUSLAT:
+            if (event.pressed) {
+                add_mods(MOD_BIT(KC_LCTRL));
+                send_keyboard_report();
+            }
+            else
+            {
+                if (get_mods() & MOD_LCTL) {
+                    del_mods(MOD_BIT(KC_LCTRL));
+                    send_keyboard_report();
+                }
+                if (record->tap.count > 0 && !(record->tap.interrupted)) {
+                    add_mods( MOD_BIT(KC_LSFT));
+                    add_mods( MOD_BIT(KC_LGUI));
+                    send_keyboard_report();
+                    del_mods( MOD_BIT(KC_LSFT));
+                    del_mods( MOD_BIT(KC_LGUI));
+                    send_keyboard_report();
+                    record->tap.count = 0;  // ad hoc: cancel tap
+                }
+            }
+    }
+}
