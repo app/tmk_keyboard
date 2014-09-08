@@ -1,17 +1,34 @@
 #include "keymap_common.h"
 
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    KEYMAP_ANSI(
-	Q,      W,    E,    R,    U,    I,    O,    P,   FN0, LGUI,        \
-	TAB, CAPS,          T,    Y, RBRC, LSFT, LBRC,        BSPC,        \
-        A,      S,    D,    F,    J,    K,    L, SCLN,   FN0, BSLS,  UP,   \
-        ESC,                G,    H,  SPC,       QUOT,  LALT,              \
-        Z,      X,    C,    V,    M, COMM,  DOT,               ENT,        \
-	RGHT,               B,    N, DOWN, RSFT, SLSH,  RALT,  APP,  LEFT, \
-	GRV,                5,    6,  EQL, LCTL, MINS,         DEL,        \
-	1,      2,    3,    4,    7,    8,    9,    0                      \
-	),
 
+
+    KEYMAP(
+	                     UP,             LEFT,             \
+	        Q,    TAB,    A,  ESC,    Z, RGHT,  GRV,    1, \
+		W,   CAPS,    S,          X,                2, \
+                E,            D,          C,                3, \
+		R,      T,    F,   G,     V,    B,    5,    4, \
+		U,      Y,    J,   H,     M,    N,    6,    7, \
+		I,  RBRC,     K, SPC,  COMM, DOWN,  EQL,    8, \
+                O,  LSFT,     L,        DOT, RSFT, LCTL,    9, \
+                P,  LBRC,  SCLN, QUOT,       SLSH, MINS,    0, \
+              FN0,          FN0, LALT,       RALT,             \
+             LGUI, BSPC,   BSLS,        ENT,  APP,  DEL
+    ),
+
+/*
+    KEYMAP_ANSI(
+	        Q,      W,    E,    R,    U,    I,    O,    P,   FN0, LGUI,        \
+	      TAB, CAPS,            T,    Y, RBRC, LSFT, LBRC,        BSPC,        \
+        UP,     A,      S,    D,    F,    J,    K,    L, SCLN,   FN0, BSLS,  \
+              ESC,                  G,    H,  SPC,       QUOT,  LALT,              \
+                Z,      X,    C,    V,    M, COMM,  DOT,               ENT,        \
+	LEFT,RGHT,                  B,    N, DOWN, RSFT, SLSH,  RALT,  APP,     \
+	      GRV,                5,    6,  EQL, LCTL, MINS,         DEL,        \
+	        1,      2,    3,    4,    7,    8,    9,    0                      \
+	),
+*/
     /* 0: qwerty */
 /*
     KEYMAP_ANSI(

@@ -21,15 +21,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* USB Device descriptor parameter */
 #define VENDOR_ID       0xFEED
-#define PRODUCT_ID      0x6060
-#define DEVICE_VER      0x0001
-#define MANUFACTURER    geekhack
-#define PRODUCT         GH60
-#define DESCRIPTION     t.m.k. keyboard firmware for GH60
+#define PRODUCT_ID      0x6065
+#define DEVICE_VER      0x0002
+#define MANUFACTURER    Filco
+#define PRODUCT         Minila
+#define DESCRIPTION     t.m.k. keyboard firmware for Minila
 
 /* key matrix size */
-#define MATRIX_ROWS 8
-#define MATRIX_COLS 11
+#define MATRIX_ROWS 11 
+#define MATRIX_COLS 8
 
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
