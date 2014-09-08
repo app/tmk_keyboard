@@ -4,7 +4,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
     KEYMAP(
-	                     UP,             LEFT,             \
+	                           UP,       LEFT,             \
 	        Q,    TAB,    A,  ESC,    Z, RGHT,  GRV,    1, \
 		W,   CAPS,    S,          X,                2, \
                 E,            D,          C,                3, \

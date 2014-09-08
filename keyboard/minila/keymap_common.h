@@ -55,7 +55,7 @@ extern const uint16_t fn_actions[];
 
 
 #define KEYMAP( \
-                  K02,           K05,            \
+                       K03,      K05,            \
         K10, K11, K12, K13, K14, K15, K16, K17,  \
         K20, K21, K22,      K24,           K27,  \
         K30,      K32,      K34,           K37,  \
@@ -67,7 +67,7 @@ extern const uint16_t fn_actions[];
         K90,      K92, K93,      K95,            \
         KA0, KA1, KA2,      KA4, KA5, KA6        \
 ) { \
-    {    KC_NO,    KC_NO, KC_##K02,    KC_NO,    KC_NO, KC_##K05,    KC_NO,    KC_NO }, \
+    {    KC_NO,    KC_NO,    KC_NO, KC_##K03,    KC_NO, KC_##K05,    KC_NO,    KC_NO }, \
     { KC_##K10, KC_##K11, KC_##K12, KC_##K13, KC_##K14, KC_##K15, KC_##K16, KC_##K17 }, \
     { KC_##K20, KC_##K21, KC_##K22,    KC_NO, KC_##K24,    KC_NO,    KC_NO, KC_##K27 }, \
     { KC_##K30,    KC_NO, KC_##K32,    KC_NO, KC_##K34,    KC_NO,    KC_NO, KC_##K37 }, \
