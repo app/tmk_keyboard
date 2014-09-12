@@ -55,8 +55,19 @@ uint8_t matrix_cols(void)
     return MATRIX_COLS;
 }
 
+// LEDs configuration
+// CAPS Lock: D7
+// Scroll Lock: D4
 void matrix_init(void)
 {
+    // LEDS ON  ==  set LOW
+    // Right LED (Down arrow)
+    /*DDRD  |= (1<<4);*/
+    /*PORTD &= ~(1<<4);*/
+    // Left LED (A)
+    DDRD  |= (1<<7);
+    PORTD &= ~(1<<7);
+
     // initialize row and col
     unselect_rows();
     init_cols();
@@ -135,31 +146,15 @@ uint8_t matrix_key_count(void)
 }
 
 /* Column pin configuration
- * col: 0   1   2   3   4   5   6   7   8   9   10  11  12  13
- * pin: F0  F1  E6  C7  C6  B6  D4  B1  B0  B5  B4  D7  D6  B3  (Rev.A)
- * pin:                                 B7                      (Rev.B)
+ * col: 0   1   2   3   4   5   6   7   
+ * pin: B0  F0  F1  F4  F5  F6  F7  B6 
  */
 static void  init_cols(void)
 {
-
-	
     DDRB  &= ~0b01000001;
     PORTB |=  0b01000001;
     DDRF  &= ~0b11110011;
     PORTF |=  0b11110011;
-
-
-    // Input with pull-up(DDR:0, PORT:1)
-    /*DDRF  &= ~(1<<0 | 1<<1);*/
-    /*PORTF |=  (1<<0 | 1<<1);*/
-    /*DDRE  &= ~(1<<6);*/
-    /*PORTE |=  (1<<6);*/
-    /*DDRD  &= ~(1<<7 | 1<<6 | 1<<4);*/
-    /*PORTD |=  (1<<7 | 1<<6 | 1<<4);*/
-    /*DDRC  &= ~(1<<7 | 1<<6);*/
-    /*PORTC |=  (1<<7 | 1<<6);*/
-    /*DDRB  &= ~(1<<7 | 1<<6 | 1<< 5 | 1<<4 | 1<<3 | 1<<1 | 1<<0);*/
-    /*PORTB |=  (1<<7 | 1<<6 | 1<< 5 | 1<<4 | 1<<3 | 1<<1 | 1<<0);*/
 }
 
 static matrix_row_t read_cols(void)
@@ -174,41 +169,21 @@ static matrix_row_t read_cols(void)
 	    | (PINF&(1<<7) ? 0 : (1<<6))
 	    | (PINB&(1<<6) ? 0 : (1<<7))
 	    ;
-/*
-    return (PINF&(1<<0) ? 0 : (1<<0)) |
-           (PINF&(1<<1) ? 0 : (1<<1)) |
-           (PINE&(1<<6) ? 0 : (1<<2)) |
-           (PINC&(1<<7) ? 0 : (1<<3)) |
-           (PINC&(1<<6) ? 0 : (1<<4)) |
-           (PINB&(1<<6) ? 0 : (1<<5)) |
-           (PIND&(1<<4) ? 0 : (1<<6)) |
-           (PINB&(1<<1) ? 0 : (1<<7)) |
-           ((PINB&(1<<0) && PINB&(1<<7)) ? 0 : (1<<8)) |     // Rev.A and B
-           (PINB&(1<<5) ? 0 : (1<<9)) |
-           (PINB&(1<<4) ? 0 : (1<<10)) |
-           (PIND&(1<<7) ? 0 : (1<<11)) |
-           (PIND&(1<<6) ? 0 : (1<<12)) |
-           (PINB&(1<<3) ? 0 : (1<<13));
-*/
 }
 
 /* Row pin configuration
- * row: 0   1   2   3   4
- * pin: D0  D1  D2  D3  D5
+ * row: 0   1   2   3   4   5   6   7   8   9   10 
+ * pin: B5  B1  B2  B3  B7  D0  D1  D2  D3  B4  C6
  */
 static void unselect_rows(void)
 {
-
+    // Hi-Z(DDR:0, PORT:0) to unselect
     DDRB  &= ~(1<<7 | 1<<5 | 1<<4 | 1<<3 | 1<<2 |1<<1);
     PORTB &= ~(1<<7 | 1<<5 | 1<<4 | 1<<3 | 1<<2 |1<<1);
     DDRD  &= ~(1<<3 | 1<<2 | 1<<1 | 1<<0);
     PORTD &= ~(1<<3 | 1<<2 | 1<<1 | 1<<0);
     DDRC  &= ~(1<<6);
     PORTC &= ~(1<<6);
-
-    // Hi-Z(DDR:0, PORT:0) to unselect
-    /*DDRD  &= ~0b00101111;*/
-    /*PORTD &= ~0b00101111;*/
 }
 
 static void select_row(uint8_t row)
