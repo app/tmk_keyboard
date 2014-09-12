@@ -65,8 +65,8 @@ void matrix_init(void)
     /*DDRD  |= (1<<4);*/
     /*PORTD &= ~(1<<4);*/
     // Left LED (A)
-    DDRD  |= (1<<7);
-    PORTD &= ~(1<<7);
+    /*DDRD  |= (1<<7);*/
+    /*PORTD &= ~(1<<7);*/
 
     // initialize row and col
     unselect_rows();
@@ -86,6 +86,14 @@ uint8_t matrix_scan(void)
         _delay_us(30);  // without this wait read unstable value.
         matrix_row_t cols = read_cols();
         if (matrix_debouncing[i] != cols) {
+/*if (i == 7)*/
+/*{*/
+    /*if (cols & (1<<2))*/
+    /*{*/
+    /*DDRD  |= (1<<4);*/
+    /*PORTD &= ~(1<<4);*/
+    /*}*/
+/*}*/
             matrix_debouncing[i] = cols;
             if (debouncing) {
                 debug("bounce!: "); debug_hex(debouncing); debug("\n");
@@ -94,7 +102,6 @@ uint8_t matrix_scan(void)
         }
         unselect_rows();
     }
-
     if (debouncing) {
         if (--debouncing) {
             _delay_ms(1);
@@ -104,7 +111,6 @@ uint8_t matrix_scan(void)
             }
         }
     }
-
     return 1;
 }
 

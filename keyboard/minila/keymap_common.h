@@ -55,29 +55,29 @@ extern const uint16_t fn_actions[];
 
 
 #define KEYMAP( \
-                       K03,      K05,            \
+             K01, K02, K03,      K05,            \
         K10, K11, K12, K13, K14, K15, K16, K17,  \
         K20, K21, K22,      K24,           K27,  \
-        K30,      K32,      K34,           K37,  \
+        K30, K31, K32,      K34, K35,      K37,  \
         K40, K41, K42, K43, K44, K45, K46, K47,  \
         K50, K51, K52, K53, K54, K55, K56, K57,  \
         K60, K61, K62, K63, K64, K65, K66, K67,  \
-        K70, K71, K72,      K74, K75, K76, K77,  \
+        K70,      K72,      K74,      K76, K77,  \
         K80, K81, K82, K83,      K85, K86, K87,  \
         K90,      K92, K93,      K95,            \
-        KA0, KA1, KA2,      KA4, KA5, KA6        \
+             KA1, KA2,      KA4,      KA6        \
 ) { \
-    {    KC_NO,    KC_NO,    KC_NO, KC_##K03,    KC_NO, KC_##K05,    KC_NO,    KC_NO }, \
+    {    KC_NO, KC_##K01, KC_##K02, KC_##K03,    KC_NO, KC_##K05,    KC_NO,    KC_NO }, \
     { KC_##K10, KC_##K11, KC_##K12, KC_##K13, KC_##K14, KC_##K15, KC_##K16, KC_##K17 }, \
     { KC_##K20, KC_##K21, KC_##K22,    KC_NO, KC_##K24,    KC_NO,    KC_NO, KC_##K27 }, \
-    { KC_##K30,    KC_NO, KC_##K32,    KC_NO, KC_##K34,    KC_NO,    KC_NO, KC_##K37 }, \
+    { KC_##K30, KC_##K31, KC_##K32,    KC_NO, KC_##K34, KC_##K35,    KC_NO, KC_##K37 }, \
     { KC_##K40, KC_##K41, KC_##K42, KC_##K43, KC_##K44, KC_##K45, KC_##K46, KC_##K47 }, \
     { KC_##K50, KC_##K51, KC_##K52, KC_##K53, KC_##K54, KC_##K55, KC_##K56, KC_##K57 }, \
     { KC_##K60, KC_##K61, KC_##K62, KC_##K63, KC_##K64, KC_##K65, KC_##K66, KC_##K67 }, \
-    { KC_##K70, KC_##K71, KC_##K72,    KC_NO, KC_##K74, KC_##K75, KC_##K76, KC_##K77 }, \
+    { KC_##K70,    KC_NO, KC_##K72,    KC_NO, KC_##K74,    KC_NO, KC_##K76, KC_##K77 }, \
     { KC_##K80, KC_##K81, KC_##K82, KC_##K83,    KC_NO, KC_##K85, KC_##K86, KC_##K87 }, \
     { KC_##K90,    KC_NO, KC_##K92, KC_##K93,    KC_NO, KC_##K95,    KC_NO,    KC_NO }, \
-    { KC_##KA0, KC_##KA1, KC_##KA2,    KC_NO, KC_##KA4, KC_##KA5, KC_##KA6,    KC_NO }  \
+    {    KC_NO, KC_##KA1, KC_##KA2,    KC_NO, KC_##KA4,    KC_NO, KC_##KA6,    KC_NO }  \
 }
 
 
