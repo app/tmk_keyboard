@@ -7,7 +7,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* 0: qwerty */
     KEYMAP(
 	             LSFT, RSFT,  FN6,       LEFT,             \
-	        Q,    TAB,    A,  ESC,    Z, RGHT,  GRV,    1, \
+	        Q,    TAB,    A,  ESC,    Z, RGHT,  BSLS,    1, \
 		W,    FN4,    S,          X,                2, \
                 E,   LGUI,    D,          C,  APP,          3, \
 		R,      T,    F,   G,     V,    B,    5,    4, \
@@ -16,7 +16,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 O,            L,        DOT,       CAPS,    9, \
                 P,  LBRC,  SCLN, QUOT,       SLSH, MINS,    0, \
               FN0,          FN0, LALT,       RALT,             \
-                   BSLS,   BSPC,        FN3,        FN5
+                     GRV,   BSPC,        FN3,        FN5
     ),
     // navi and num pad
     KEYMAP(
