@@ -13,7 +13,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		R,      T,    F,   G,     V,    B,    5,    4, \
 		U,      Y,    J,   H,     M,    N,    6,    7, \
 		I,  RBRC,     K, SPC,  COMM, DOWN,  EQL,    8, \
-                O,            L,        DOT,       CAPS,    9, \
+                O,            L,        DOT,        FN8,    9, \
                 P,  LBRC,  SCLN, QUOT,       SLSH, MINS,    0, \
               FN7,          FN7, LALT,       RALT,             \
                      GRV,   BSPC,        FN3,        FN5
@@ -21,16 +21,16 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // navi and num pad
     KEYMAP(
 	             LSFT, RSFT,  PGUP,      HOME,              \
-	        Q,    TAB,   P0,  INS,    Z,  END,  BSLS,    F1, \
+	        Q,    TAB,   P0,  INS,    Z,  END,  BSLS,   F1, \
 	       P7,   LCTL,   P4,         P1,                F2, \
                P8,   LGUI,   P5,         P2,  APP,          F3, \
 	       P9,   NLCK,   P6,    G,   P3,    B,    5,    F4, \
 	     PGUP,   PSCR, LEFT, HOME, PGDN,    N,    6,    F7, \
 	       UP,    GRV, DOWN,  SPC,  FN2, PGDN,  F12,    F8, \
-                O,         RGHT,        NUBS,       CAPS,    F9, \
-                P,   FN1,   END, QUOT,         FN1,  F11,    F10, \
-             TRNS,         TRNS, LALT,       RALT,             \
-                     GRV,  DEL,        ENT,        DEL
+                O,         RGHT,       NUBS,       TRNS,    F9, \
+                P,   FN1,   END, QUOT,         FN1, F11,   F10, \
+             TRNS,         TRNS, LALT,       RALT,              \
+                     GRV,   DEL,        ENT,        DEL
     ),
 
 };
@@ -50,6 +50,7 @@ const uint16_t PROGMEM fn_actions[] = {
     [5] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_DEL),
     [6] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_UP),
     [7] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),
+    [8] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_CAPS),
 /*
     [1] = ACTION_LAYER_TOGGLE(4),     // toggle arrow overlay
     [2] = ACTION_LAYER_TOGGLE(5),     // toggle Esc overlay
