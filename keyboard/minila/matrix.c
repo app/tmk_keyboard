@@ -86,14 +86,6 @@ uint8_t matrix_scan(void)
         _delay_us(30);  // without this wait read unstable value.
         matrix_row_t cols = read_cols();
         if (matrix_debouncing[i] != cols) {
-/*if (i == 7)*/
-/*{*/
-    /*if (cols & (1<<2))*/
-    /*{*/
-    /*DDRD  |= (1<<4);*/
-    /*PORTD &= ~(1<<4);*/
-    /*}*/
-/*}*/
             matrix_debouncing[i] = cols;
             if (debouncing) {
                 debug("bounce!: "); debug_hex(debouncing); debug("\n");
