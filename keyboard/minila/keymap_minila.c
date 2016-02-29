@@ -6,7 +6,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* 0: qwerty */
     KEYMAP(
-         LSFT, RSFT,  FN6,       LEFT,             \
+         FN8, RSFT,  FN6,       LEFT,             \
     Q,    TAB,    A,  ESC,    Z, RGHT,  BSLS,    1, \
     W,    FN4,    S,          X,                2, \
     E,   LGUI,    D,          C,  APP,          3, \
@@ -46,12 +46,11 @@ const uint16_t PROGMEM fn_actions[] = {
     [1] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),    // tilde
     [2] = ACTION_MODS_KEY(MOD_LSFT, KC_NUBS),    // >
     [3] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENTER),
-    /*[4] = ACTION_FUNCTION_TAP(RUSLAT),*/
     [4] = ACTION_FUNCTION_TAP(RUSLAT),
     [5] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_DEL),
     [6] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_UP),
     [7] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),
-    [8] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_CAPS),
+    [8] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_CAPS),
     [9] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_PGUP),
 /*
     [1] = ACTION_LAYER_TOGGLE(4),     // toggle arrow overlay
