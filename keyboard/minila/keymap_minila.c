@@ -21,8 +21,8 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // navi and num pad
     KEYMAP(
 	             LSFT, RSFT,  FN9,      HOME,              \
-       PSLS,   PENT,   P0,  INS, PDOT,  END,  BSLS,   F1, \
-	       P7,   LCTL,   P4,   P1,                F2, \
+       PSLS,   BSPC,   P0,  INS, PDOT,  END,  BSLS,   F1, \
+	       P7,   FN10,   P4,   P1,                F2, \
                P8,   LGUI,   P5,         P2,  APP,          F3, \
 	       P9,   PAST,   P6, PMNS,   P3, PPLS,   F5,    F4, \
 	     PGUP,   PSCR, LEFT, HOME, PGDN, NLCK,   F6,    F7, \
@@ -52,6 +52,7 @@ const uint16_t PROGMEM fn_actions[] = {
     [7] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),
     [8] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_CAPS),
     [9] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_PGUP),
+    [10] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ENTER),
 /*
     [1] = ACTION_LAYER_TOGGLE(4),     // toggle arrow overlay
     [2] = ACTION_LAYER_TOGGLE(5),     // toggle Esc overlay
