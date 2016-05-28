@@ -41,7 +41,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          P9,   PAST,   P6, PMNS,   P3, PPLS,   F5,    F4, \
        PGUP,   PSCR, LEFT, HOME, PGDN, NLCK,   F6,    F7, \
          UP,    GRV, DOWN,  SPC,  FN2, PGDN,  F12,    F8, \
-          O,         RGHT,       NUBS,       TRNS,    F9, \ // NUBS for using with russian layout
+          O,         RGHT,       NUBS,       TRNS,    F9, \ 
           P,   FN1,   END, QUOT,         FN1, F11,   F10, \
               TRNS,        TRNS, LALT,       RALT,        \
                       GRV,  DEL,        ENT,        DEL
