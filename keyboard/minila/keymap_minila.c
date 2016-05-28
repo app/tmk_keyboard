@@ -6,7 +6,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* 0: qwerty */
     KEYMAP(
-         FN8, RSFT,  FN6,       LEFT,             \
+         LSFT, RSFT,  FN6,       LEFT,             \
     Q,    TAB,    A,  ESC,    Z, RGHT,  BSLS,    1, \
     W,    FN4,    S,          X,                2, \
     E,   LGUI,    D,          C,  APP,          3, \
