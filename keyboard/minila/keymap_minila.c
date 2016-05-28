@@ -3,34 +3,48 @@
 
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-
-    /* 0: qwerty */
+/* keyboard keys unmodified layout for reference information
     KEYMAP(
-         LSFT, RSFT,  FN6,       LEFT,             \
-    Q,    TAB,    A,  ESC,    Z, RGHT,  BSLS,    1, \
-    W,    FN4,    S,          X,                2, \
-    E,   LGUI,    D,          C,  APP,          3, \
-		R,      T,    F,   G,     V,    B,    5,    4, \
-		U,      Y,    J,   H,     M,    N,    6,    7, \
-		I,  RBRC,     K, SPC,  COMM, DOWN,  EQL,    8, \
-    O,            L,        DOT,        FN8,    9, \
-    P,  LBRC,  SCLN, QUOT,       SLSH, MINS,    0, \
-     FN7,          FN7, LALT,       RALT,             \
-                     GRV,   BSPC,        FN3,        FN5
+               LSFT, RSFT,   UP,       LEFT,             \
+          Q,    TAB,    A,  ESC,    Z, RGHT,  GRV,    1, \
+          W,   CAPS,    S,          X,                2, \
+          E,   LGUI,    D,          C,  APP,          3, \
+          R,      T,    F,   G,     V,    B,    5,    4, \
+          U,      Y,    J,   H,     M,    N,    6,    7, \
+          I,  RBRC,     K, SPC,  COMM, DOWN,  EQL,    8, \
+          O,            L,        DOT,       LCTL,    9, \
+          P,  LBRC,  SCLN, QUOT,       SLSH, MINS,    0, \
+              FN0,          FN0, LALT,       RALT,       \  //FN0 - bottom line keys around space bar
+                     BSLS, BSPC,        ENT,        DEL
     ),
-    // navi and num pad
+*/
+    /* 0: qwerty  layer */
     KEYMAP(
-	             LSFT, RSFT,  FN9,      HOME,              \
+               LSFT, RSFT,  FN6,       LEFT,             \
+          Q,    TAB,    A,  ESC,    Z, RGHT, BSLS,    1, \
+          W,    FN4,    S,          X,                2, \
+          E,   LGUI,    D,          C,  APP,          3, \
+          R,      T,    F,    G,    V,    B,    5,    4, \
+          U,      Y,    J,    H,    M,    N,    6,    7, \
+          I,   RBRC,    K,  SPC, COMM, DOWN,  EQL,    8, \
+          O,            L,        DOT,        FN8,    9, \
+          P,   LBRC, SCLN, QUOT,       SLSH, MINS,    0, \
+                FN7,        FN7, LALT,       RALT,       \
+                      GRV, BSPC,        FN3,        FN5
+    ),
+    // navi and num pad layer
+    KEYMAP(
+               LSFT, RSFT,  FN9,       HOME,              \
        PSLS,   BSPC,   P0,  INS, PDOT,  END,  BSLS,   F1, \
-	       P7,   FN10,   P4,   P1,                F2, \
-               P8,   LGUI,   P5,         P2,  APP,          F3, \
-	       P9,   PAST,   P6, PMNS,   P3, PPLS,   F5,    F4, \
-	     PGUP,   PSCR, LEFT, HOME, PGDN, NLCK,   F6,    F7, \
-	       UP,    GRV, DOWN,  SPC,  FN2, PGDN,  F12,    F8, \
-                O,         RGHT,       NUBS,       TRNS,    F9, \
-                P,   FN1,   END, QUOT,         FN1, F11,   F10, \
-             TRNS,         TRNS, LALT,       RALT,              \
-                     GRV,   DEL,        ENT,        DEL
+         P7,   FN10,   P4,         P1,                F2, \
+         P8,   LGUI,   P5,         P2,  APP,          F3, \
+         P9,   PAST,   P6, PMNS,   P3, PPLS,   F5,    F4, \
+       PGUP,   PSCR, LEFT, HOME, PGDN, NLCK,   F6,    F7, \
+         UP,    GRV, DOWN,  SPC,  FN2, PGDN,  F12,    F8, \
+          O,         RGHT,       NUBS,       TRNS,    F9, \
+          P,   FN1,   END, QUOT,         FN1, F11,   F10, \
+              TRNS,        TRNS, LALT,       RALT,        \
+                      GRV,  DEL,        ENT,        DEL
     ),
 
 };
