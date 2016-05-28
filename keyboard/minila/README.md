@@ -6,3 +6,5 @@ In minila keyboard Colums have to be selected and rows have to be read when you 
 Sorry for inconvinence.
 
 Enjoy!
+
+teensy_loader_cli -mmcu=atmega32u4 -w minila_lufa.hex
