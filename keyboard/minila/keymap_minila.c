@@ -41,7 +41,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          P9,   PAST,   P6, PMNS,   P3, PPLS,   F5,    F4, \
        PGUP,   PSCR, LEFT, HOME, PGDN, NLCK,   F6,    F7, \
          UP,    GRV, DOWN,  SPC,  FN2, PGDN,  F12,    F8, \
-          O,         RGHT,       NUBS,       TRNS,    F9, \
+          O,         RGHT,       NUBS,       TRNS,    F9, \ // NUBS for using with russian layout
           P,   FN1,   END, QUOT,         FN1, F11,   F10, \
               TRNS,        TRNS, LALT,       RALT,        \
                       GRV,  DEL,        ENT,        DEL
@@ -57,14 +57,14 @@ enum function_id {
 const uint16_t PROGMEM fn_actions[] = {
     /* Poker Layout */
     [0] = ACTION_LAYER_MOMENTARY(1),  // to Fn overlay
-    [1] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),    // tilde
-    [2] = ACTION_MODS_KEY(MOD_LSFT, KC_NUBS),    // >
+    [1] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),    // tilde, enables getting [ in russian layout by pressing FN+LBRC
+    [2] = ACTION_MODS_KEY(MOD_LSFT, KC_NUBS),    // <, enables getting < in russian layout by pressing FN+COMM
     [3] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENTER),
-    [4] = ACTION_FUNCTION_TAP(RUSLAT),
+    [4] = ACTION_FUNCTION_TAP(RUSLAT),  // Generates LAN+Shift keys on tap or works as LCTL while holded down
     [5] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_DEL),
     [6] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_UP),
     [7] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),
-    [8] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_CAPS),
+    [8] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_CAPS),
     [9] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_PGUP),
     [10] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ENTER),
 /*
