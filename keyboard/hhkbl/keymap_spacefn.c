@@ -20,14 +20,14 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
 
     KEYMAP(
-             FN5,LGUI, GRV,            5,   6, EQL,     MINS,    UP,
+             FN4,FN5, GRV,            5,   6, EQL,     MINS,    UP,
 	                  1,  2,   3,   4,   7,   8,   9,   0,  DOWN,
 		          Q,  W,   E,   R,   U,   I,   O,   P,  RGHT,
         BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  RALT,
         BSLS,             A,  S,   D,   F,   J,   K,   L,SCLN,  LALT,
-              FN0,      ESC,            G,   H,          QUOT,
+              LGUI,      ESC,            G,   H,          QUOT,
 	FN3,      RSFT,   Z,  X,   C,   V,   M,      DOT,       COMM,
-        FN4,  FN0,                      B,   N,           SLSH
+        FN7,  FN0,                      B,   N,           SLSH
 	),
 
 
@@ -48,28 +48,28 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KEYMAP(
 /*LCTL,LGUI, GRV,            5,   6, EQL,     MINS,    UP,*/
-  TRNS,LGUI, DEL,           F5,  F6, F12,      F11,  PGUP,
+  FN10, CAPS, GRV,           F5,  F6, F12,      F11,  PGUP,
 
 /*1,  2,   3,   4,   7,   8,   9,   0,  DOWN,*/
  F1, F2,  F3,  F4,  F7,  F8,  F9, F10,  PGDN,
 
 /*Q,  W,   E,   R,   U,   I,   O,   P,  RGHT,*/
-  Q, P7,  P8,  P9,PGUP,  UP,   O,   P,   END,
+PSLS, P7,  P8,  P9,PGUP,  UP,   O,   P,   END,
 
 /*BSPC,     LSFT, TAB,            T,   Y,RBRC,LEFT,LBRC,  RALT,*/
-   DEL,     LSFT,CAPS,         NLCK,PSCR, GRV,HOME, FN1,  RALT,
+   DEL,     LSFT,BSPC,         PAST,PSCR, GRV,HOME, FN1,  RALT,
 
 /*BSLS,             A,  S,   D,   F,   J,   K,   L,SCLN,  LALT,*/
    INS,            P0, P4,  P5,  P6,LEFT,DOWN,RGHT, END,  LALT,
 
 /*FN0,      ESC,            G,   H,          QUOT,*/
- TRNS,      ESC,            G,HOME,          QUOT,
+ TRNS,      ESC,         PMNS,HOME,          QUOT,
 
 /*FN3,      RSFT,   Z,  X,   C,   V,   M,      DOT,       COMM,*/
- TRNS,      RSFT,   Z, P1,  P2,  P3,PGDN,     NUBS,        FN2,
+ TRNS,      RSFT,PDOT, P1,  P2,  P3,PGDN,     NUBS,        FN2,
 
 /*SPC,  FN0,                      B,   N,           SLSH*/
- TRNS, TRNS,                      B, DEL,           FN1
+ TRNS, TRNS,                   PPLS,NLCK,           FN1
 	
 	),
 
@@ -89,15 +89,19 @@ const uint16_t PROGMEM fn_actions[] = {
     [1] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),    // tilde
     [2] = ACTION_MODS_KEY(MOD_LSFT, KC_NUBS),    // >
     [3] = ACTION_MODS_TAP_KEY(MOD_RCTL, KC_ENTER),
-    [4] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),
-    // [5] = ACTION_FUNCTION(RUSLAT),
-    [5] = ACTION_FUNCTION_TAP(RUSLAT),
+    [4] = ACTION_FUNCTION_TAP(RUSLAT),  // Generates Alt+Shift keys on tap or works as LCTL while holded down
+    [5] = ACTION_MODS_TAP_KEY(MOD_LGUI, KC_DEL),
     /*[2] = ACTION_LAYER_TAP_KEY(2, KC_ESC),*/
     /*[1] = ACTION_MODS_KEY(MOD_LSFT, KC_GRV),    // tilde*/
+    [6] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_UP),
+    [7] = ACTION_LAYER_TAP_KEY(1, KC_SPACE),
+    [8] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_CAPS),
+    [9] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_PGUP),
+    [10] = ACTION_MODS_TAP_KEY(MOD_LCTL, KC_ENTER),
 };
 
 //Left Control key Tap (down+up) works as LShift+LGUI 
-//I use LShift+LGUI for RUS/ENG keyboard layout switching
+//I use LShift+LGUI or LShift+LAlt for RUS/ENG keyboard layout switching
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
 {
     keyevent_t event = record->event;
