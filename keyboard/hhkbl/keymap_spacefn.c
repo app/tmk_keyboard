@@ -114,11 +114,18 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
                     send_keyboard_report();
                 }
                 if (record->tap.count > 0 && !(record->tap.interrupted)) {
-                    add_mods( MOD_BIT(KC_LSFT));
-                    add_mods( MOD_BIT(KC_LGUI));
-                    send_keyboard_report();
-                    del_mods( MOD_BIT(KC_LSFT));
-                    del_mods( MOD_BIT(KC_LGUI));
+                    // Alt+Shift
+										add_mods( MOD_BIT(KC_LSFT));
+										add_mods( MOD_BIT(KC_LALT));
+										send_keyboard_report();
+										del_mods( MOD_BIT(KC_LALT));
+										del_mods( MOD_BIT(KC_LSFT));
+                    // Win+Shift
+                    /*add_mods( MOD_BIT(KC_LSFT));*/
+                    /*add_mods( MOD_BIT(KC_LGUI));*/
+                    /*send_keyboard_report();*/
+                    /*del_mods( MOD_BIT(KC_LSFT));*/
+                    /*del_mods( MOD_BIT(KC_LGUI));*/
                     send_keyboard_report();
                     record->tap.count = 0;  // ad hoc: cancel tap
                 }
